@@ -7,6 +7,14 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
+      - run:
+          name: git checkings
+          command: |
+            git --version
+      - run:
+          name: ssh checkings
+          command: |
+            ssh -V      
       - add_ssh_keys:
           fingerprints: ["d4:b3:65:d0:4c:e8:bc:7e:ad:27:d8:3d:44:67:20:c2"] 
       - run:
